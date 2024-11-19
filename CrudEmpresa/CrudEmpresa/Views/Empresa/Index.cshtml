@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CrudEmpresa.ViewModel.Empresa.EmpresaIndexViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Empresas</h2>
+
+<p>
+    @Html.ActionLink("Criar empresa", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>CNPJ</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Email</th>
+        <th>País</th>
+        <th>Data de Cadastro</th>
+    </tr>
+
+    @foreach (var empresa in Model)
+    {
+        <tr>
+            <td>
+                @empresa.CNPJ
+            </td>
+            <td>
+                @empresa.Nome
+            </td>
+            <td>
+                @empresa.Telefone
+            </td>
+            <td>
+                @empresa.Email
+            </td>
+            <td>
+                @empresa.Pais
+            </td>
+            <td>
+                @empresa.DataCadastro
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit") |
+                @Html.ActionLink("Detalhes", "Details", new { id = empresa.Id }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = empresa.Id })
+            </td>
+        </tr>
+    }
+
+</table>
