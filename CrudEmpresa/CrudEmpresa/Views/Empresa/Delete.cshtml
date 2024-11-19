@@ -1,35 +1,15 @@
 ﻿@model CrudEmpresa.ViewModel.Empresa.EmpresaDeleteViewModel
 
 @{
-    ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
-
-<h3>Você tem certeza que deseja deletar essa empresa?</h3>
+<h3>Você tem certeza que deseja excluir essa empresa?</h3>
 <div>
-    <h4>Empresa</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CNPJ)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CNPJ)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-
-
-
+        <p><strong>CNPJ:</strong> @Model.CNPJ</p>
+        <p><strong>Empresa:</strong> @Model.Nome</p>
     </dl>
 
     @using (Html.BeginForm("DeleteConfirmed", "Empresa"))
@@ -38,9 +18,7 @@
 
         @Html.HiddenFor(model => model.Id)
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+        <input type="submit" value="Excluir" class="btn btn-danger" /> 
+        <a class="btn btn-primary" href="@Url.Action("Index")" role="button">Cancelar</a>
     }
 </div>

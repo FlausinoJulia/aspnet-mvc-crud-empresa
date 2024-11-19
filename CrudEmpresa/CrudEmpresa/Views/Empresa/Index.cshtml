@@ -4,11 +4,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Empresas</h2>
+ 
+<h2 style="float: left;">Empresas</h2> 
+<a style="float: right;" class="btn btn-primary" href="@Url.Action("Create")" role="button">Criar empresa</a>
 
 <p>
-    @Html.ActionLink("Criar empresa", "Create")
+    
 </p>
 <table class="table">
     <tr>

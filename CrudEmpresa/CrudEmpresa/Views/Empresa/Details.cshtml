@@ -1,67 +1,29 @@
 ﻿@model CrudEmpresa.ViewModel.Empresa.EmpresaDetailsViewModel
 
 @{
-    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Detalhes da @Model.Nome</h2>
 
 <div>
-    <h4>Empresa</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CNPJ)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CNPJ)
-        </dd>
+    <p>
+        <strong>@Html.DisplayNameFor(model => model.CNPJ):</strong>   @Model.CNPJ <br/>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
+        <strong>@Html.DisplayNameFor(model => model.Nome):</strong>   @Model.Nome <br />
 
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
+        <strong>@Html.DisplayNameFor(model => model.Telefone):</strong>   @Model.Telefone <br />
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefone)
-        </dt>
+        <strong>@Html.DisplayNameFor(model => model.Email):</strong>   @Model.Email <br />
 
-        <dd>
-            @Html.DisplayFor(model => model.Telefone)
-        </dd>
+        <strong>@Html.DisplayNameFor(model => model.Pais):</strong>   @Model.Pais <br />
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pais)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pais)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DataCadastro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DataCadastro)
-        </dd>
-
-    </dl>
+        <strong>@Html.DisplayNameFor(model => model.DataCadastro):</strong>   @Model.DataCadastro
+    </p>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    <a class="btn btn-primary" href="@Url.Action("Edit", new { id = Model.Id })" role="button">Editar</a>
+    <a class="btn btn-primary" href="@Url.Action("Index")" role="button">Voltar</a>
 </p>
