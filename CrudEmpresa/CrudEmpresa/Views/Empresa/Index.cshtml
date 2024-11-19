@@ -42,7 +42,7 @@
                 @empresa.DataCadastro
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit") |
+                @Html.ActionLink("Editar", "Edit", new { id = empresa.Id }) |
                 @Html.ActionLink("Detalhes", "Details", new { id = empresa.Id }) |
                 @Html.ActionLink("Deletar", "Delete", new { id = empresa.Id })
             </td>
